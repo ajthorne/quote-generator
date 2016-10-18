@@ -5,26 +5,28 @@ let container = document.getElementById('container');
 
 let fact = document.createElement('h3');
 container.appendChild(fact);
-fact.innerHTML = 'Fact will go here';
+fact.innerHTML = 'Start your learning...';
 
 let factBtn = document.createElement('button');
 container.appendChild(factBtn);
 factBtn.innerHTML = 'Learn a new fact';
 
-// let quoteAdd = document.createElement('input');
-// container.appendChild(quoteAdd);
-// console.dir(quoteAdd);
 
 factBtn.addEventListener('click', function (e) {
   console.log('You need to access your API');
-  fact.innerHTML = 'Bare Bones';
+  // fact.innerHTML = 'Bare Bones';
   // ajax call
   $.ajax({
     type: 'GET',
-    url: `http://catfacts-api.appspot.com/api/facts?number=1`,
-    // dataType: 'jsonp',
+    url: `http://www.catfact.info/api/v1/facts.json?`,
+    data: {
+      page: Math.floor(Math.random() * 439),
+      //rounding number, 439 is range of pages
+      per_page: 1
+    },
+    dataType: 'json',
     success: function(response) {
-      console.log(response);
+      fact.innerHTML = response.facts[0].details;
     }
   })
 
@@ -39,6 +41,4 @@ factBtn.addEventListener('click', function (e) {
   // })
 })
 
-//API DOCS
-//http://www.catfact.info/
-//
+//thanks http://www.catfact.info/ for helping me build this
