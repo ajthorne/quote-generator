@@ -1,0 +1,38 @@
+body {
+  background: url('http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0467/9015/rCatsCoral_shop_thumb.png');
+  font-family: 'Helvetica', sans-serif;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+#container {
+  background: rgba(255,255,255, 0.8);
+  border: 5px solid gray;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+
+  h3 {
+    text-align: center;
+    padding: 2%;
+    font-size: 2.5rem;
+    height: 250px;
+  }
+}
+
+.btn {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 1.5rem;
+  background: #F8C7B8;
+  padding: 2%;
+
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
+}

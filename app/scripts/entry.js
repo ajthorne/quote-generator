@@ -8,13 +8,13 @@ container.appendChild(fact);
 fact.innerHTML = 'Start your learning...';
 
 let factBtn = document.createElement('button');
+factBtn.classList.add('btn');
 container.appendChild(factBtn);
 factBtn.innerHTML = 'Learn a new fact';
 
 
 factBtn.addEventListener('click', function (e) {
-  console.log('You need to access your API');
-  // fact.innerHTML = 'Bare Bones';
+  // console.log('You need to access your API');
   // ajax call
   $.ajax({
     type: 'GET',
@@ -29,16 +29,6 @@ factBtn.addEventListener('click', function (e) {
       fact.innerHTML = response.facts[0].details;
     }
   })
-
-
-  //for adding a quote
-  // let test = document.createElement('li');
-  // quote.appendChild(test);
-  // test.innerHTML = 'Bare Bones';
-  //
-  // test.addEventListener('click', function (e) {
-  //   quote.removeChild(e.target);
-  // })
 })
 
 //thanks http://www.catfact.info/ for helping me build this
